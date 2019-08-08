@@ -1,0 +1,306 @@
+﻿<Page
+    x:Class="RegularSeasonResults2018.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RegularSeasonResults2018"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1500" Height="1050">
+
+    <Grid>
+        <Grid.Resources>
+            <local:SeasonResultsFetcher x:Key="Fetcher"/>
+        </Grid.Resources>
+        <Grid.DataContext>
+            <Binding Source="{StaticResource Fetcher}"/>
+        </Grid.DataContext>
+        
+        <TextBox x:Name="regularSeasonResults2018" HorizontalAlignment="Center" Margin="0,38,0,0" Text="2018 Regular Season Results" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontWeight="ExtraBold" IsReadOnly="True"/>
+
+        <Grid Margin="0,120,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="300" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="LeagueALText" Grid.Row="0" Text="AL" FontSize="36" TextAlignment="Center" Grid.ColumnSpan="3" Margin="0,0,0,50" BorderBrush="Black" Grid.RowSpan="2" FontWeight="Bold" IsReadOnly="True"/>
+
+            <TextBox Name="ALWestText" Grid.Column="0" Text="West" HorizontalAlignment="Center" FontSize="30" Margin="0,50,0,0" Grid.RowSpan="2" Width="500" TextAlignment="Center" IsReadOnly="True" />
+            <TextBox Name="ALCentralText" Grid.Column="1" Text="Central" HorizontalAlignment="Center" FontSize="30" Margin="0,50,0,0" Grid.RowSpan="2" Width="500" TextAlignment="Center" IsReadOnly="True" />
+            <TextBox Name="ALEastText" Grid.Column="2" Text="East" HorizontalAlignment="Center" FontSize="30" TextAlignment="Center" Margin="0,50,0,0" Grid.RowSpan="2" Width="500" IsReadOnly="True" />
+
+            <Grid Name="ALWestGrid" Grid.Row="2" Grid.Column="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=AL.West.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=AL.West.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=AL.West.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=AL.West.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=AL.West.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=AL.West.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=AL.West.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AL.West.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=AL.West.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=AL.West.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AL.West.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=AL.West.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=AL.West.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AL.West.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=AL.West.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+            <Grid Name="ALCentralGrid" Grid.Row="2" Grid.Column="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=AL.Central.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=AL.Central.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=AL.Central.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=AL.Central.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=AL.Central.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=AL.Central.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=AL.Central.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AL.Central.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=AL.Central.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=AL.Central.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AL.Central.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=AL.Central.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=AL.Central.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AL.Central.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=AL.Central.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+            <Grid Name="ALEastGrid" Grid.Row="2" Grid.Column="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=AL.East.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=AL.East.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=AL.East.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=AL.East.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=AL.East.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=AL.East.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=AL.East.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AL.East.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=AL.East.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=AL.East.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AL.East.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=AL.East.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=AL.East.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AL.East.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=AL.East.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+            <TextBox Name="LeagueNLText" Grid.Row="4" Text="NL" FontSize="36" TextAlignment="Center" Grid.ColumnSpan="3" BorderBrush="Black" Grid.RowSpan="2" FontWeight="Bold" IsReadOnly="True" />
+
+            <TextBox Name="NLWestText" Grid.Row="5" Grid.Column="0" Text="West" HorizontalAlignment="Center" FontSize="30" TextAlignment="Center" Width="500" IsReadOnly="True" />
+            <TextBox Name="NLCentralText" Grid.Row="5" Grid.Column="1" Text="Central" HorizontalAlignment="Center" FontSize="30" Margin="0,0,0,0" Width="500" TextAlignment="Center" IsReadOnly="True"/>
+            <TextBox Name="NLEastText" Grid.Row="5" Grid.Column="2" Text="East" HorizontalAlignment="Center" FontSize="30" Width="500" TextAlignment="Center" IsReadOnly="True"/>
+
+            <Grid Name="NLWestGrid" Grid.Row="6" Grid.Column="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=NL.West.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=NL.West.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=NL.West.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=NL.West.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NL.West.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=NL.West.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=NL.West.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NL.West.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=NL.West.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=NL.West.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=NL.West.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=NL.West.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=NL.West.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=NL.West.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=NL.West.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+            <Grid Name="NLCentralGrid" Grid.Row="6" Grid.Column="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=NL.Central.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=NL.Central.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=NL.Central.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=NL.Central.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NL.Central.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=NL.Central.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=NL.Central.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NL.Central.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=NL.Central.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=NL.Central.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=NL.Central.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=NL.Central.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=NL.Central.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=NL.Central.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=NL.Central.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+            <Grid Name="NLEastGrid" Grid.Row="6" Grid.Column="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Text="Team" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="Wins" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Text="Losses" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=NL.East.First.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=NL.East.First.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=NL.East.First.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=NL.East.Second.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NL.East.Second.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=NL.East.Second.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=NL.East.Third.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NL.East.Third.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=NL.East.Third.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=NL.East.Fourth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=NL.East.Fourth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=NL.East.Fourth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=NL.East.Fifth.Name}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=NL.East.Fifth.Wins}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=NL.East.Fifth.Losses}" TextAlignment="Center" Height="50" FontSize="26" Margin="0,0,0,0" IsReadOnly="True"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
+
+
